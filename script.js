@@ -1,11 +1,12 @@
-function submitForm() {
-    
+document.getElementById("loginForm").addEventListener("submit", function(event){
+    event.preventDefault();
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-      if (username === "" || password === "") {
-        alert("Please enter both username and password.");
+    console.log("Username: " + username + ", Password: " + password);
+    
+    if (username === "user" && password === "password") {
+        window.location.href = "home.html";
     } else {
-        // Placeholder for authentication logic (e.g., send data to server)
-        alert("Login successful!");
+        alert("Invalid username or password");
     }
-}
+});
